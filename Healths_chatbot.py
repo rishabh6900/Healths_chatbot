@@ -17,7 +17,7 @@ disease_prompt = PromptTemplate(
     input_variables=["disease"]
 )
 
-# Prompt for treatment based on disease info
+# Prompt for treatment 
 treatment_prompt = PromptTemplate(
     template="""
     Based on the following disease information: {disease_info}
@@ -30,7 +30,7 @@ treatment_prompt = PromptTemplate(
     input_variables=["disease_info"]
 )
 
-# Create chains
+# chains
 disease_chain = disease_prompt | model | StrOutputParser()
 treatment_chain = treatment_prompt | model | StrOutputParser()
 
